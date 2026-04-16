@@ -73,65 +73,21 @@
         .q-sub-container p { padding-left: 28px; text-indent: -28px; margin: 4px 0; }
 
         /* গণিতের বিশেষ ফরম্যাট আপডেট করা হয়েছে */
-        .math-vertical { 
-            display: inline-block; 
-            text-align: right; 
-            margin: 0; /* গ্যাপ কমানো হয়েছে */
-            line-height: 1.2; /* গ্যাপ কমানো হয়েছে */
-            font-size: calc(var(--doc-font-size) + 2pt);
-            vertical-align: top;
-        }
-        .math-row { 
-            position: relative; 
-            padding-left: 20px; /* জায়গার জন্য প্যাডিং কমানো হয়েছে */
-            letter-spacing: 2px; /* সংখ্যার মাঝে ফাঁকা কমানো হয়েছে */
-        }
-        .math-line { 
-            border-bottom: 2px solid black; 
-            padding-bottom: 2px; 
-            margin-bottom: 2px;
-        }
-        .math-sign { 
-            position: absolute; 
-            left: 0; 
-            bottom: 2px; 
-            font-weight: bold;
-        }
-        
-        .fraction { 
-            display: inline-flex; 
-            flex-direction: column; 
-            align-items: center; 
-            vertical-align: middle; 
-            margin: 0 5px; 
-            line-height: 1.2; 
-        }
-        .frac-top { 
-            border-bottom: 1.5px solid black; 
-            padding: 0 4px; 
-            width: 100%; 
-            text-align: center;
-        }
-        .frac-bottom { 
-            padding: 0 4px; 
-            width: 100%; 
-            text-align: center;
-        }
+        .math-vertical { display: inline-block; text-align: right; margin: 0; line-height: 1.2; font-size: calc(var(--doc-font-size) + 2pt); vertical-align: top;}
+        .math-row { position: relative; padding-left: 20px; letter-spacing: 2px; }
+        .math-line { border-bottom: 2px solid black; padding-bottom: 2px; margin-bottom: 2px;}
+        .math-sign { position: absolute; left: 0; bottom: 2px; font-weight: bold;}
+        .fraction { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 5px; line-height: 1.2; }
+        .frac-top { border-bottom: 1.5px solid black; padding: 0 4px; width: 100%; text-align: center;}
+        .frac-bottom { padding: 0 4px; width: 100%; text-align: center;}
         .math-inline { display: inline-block; margin: 0 10px; font-weight: bold; }
-        
-        /* অদৃশ্য ছকের ডিজাইন আপডেট (কাটা পড়া রোধ করতে) */
-        .math-grid-table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 5px 0; /* উপরে নিচে গ্যাপ কমানো হয়েছে */
-            table-layout: fixed; /* কলামগুলো যেন সমান থাকে এবং বাইরে না যায় */
-        }
-        .math-grid-table td { vertical-align: top; padding: 2px; } /* প্যাডিং কমানো হয়েছে */
+        .math-grid-table { width: 100%; border-collapse: collapse; margin: 5px 0; table-layout: fixed; }
+        .math-grid-table td { vertical-align: top; padding: 2px; }
 
         /* ডাটাবেস পপ-আপ */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; padding: 15px; }
-        .modal-content { background-color: #fff; width: 100%; max-width: 600px; max-height: 85vh; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; }
-        .modal-header { background: #34495e; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .modal-content { background-color: #fff; width: 100%; max-width: 650px; max-height: 85vh; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; }
+        .modal-header { background: #34495e; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;}
         .modal-header h3 { margin: 0; font-family: 'Tiro Bangla', serif; font-size: 18px;}
         .close-btn { color: white; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1;}
         .modal-body { padding: 15px; overflow-y: auto; flex: 1; background-color: #f4f6f7;}
@@ -143,15 +99,19 @@
         .saved-item { padding: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ecf0f1; font-family: 'Tiro Bangla', serif; flex-wrap: wrap; gap: 10px;}
         .saved-item:last-child { border-bottom: none; }
         .item-info { font-size: 16px; font-weight: bold; color: #333;}
-        .action-btns { display: flex; gap: 5px; }
-        .btn-edit, .btn-delete { padding: 6px 12px; border-radius: 3px; border: none; cursor: pointer; font-size: 13px; font-weight: bold;}
+        .action-btns { display: flex; gap: 5px; flex-wrap: wrap; }
+        
+        /* নতুন বাটন ডিজাইন */
+        .btn-edit, .btn-delete, .btn-export { padding: 6px 12px; border-radius: 3px; border: none; cursor: pointer; font-size: 13px; font-weight: bold;}
         .btn-edit { background: #27ae60; color: white; }
+        .btn-export { background: #f39c12; color: white; }
         .btn-delete { background: #e74c3c; color: white; }
 
-        .print-cat-btn { background: #27ae60; color: white; padding: 4px 10px; border-radius: 4px; font-size: 14px; margin-right: 10px; font-weight: bold; border: 1px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer;}
+        .print-cat-btn { background: #27ae60; color: white; padding: 4px 10px; border-radius: 4px; font-size: 14px; margin-right: 5px; font-weight: bold; border: 1px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer;}
+        .export-cat-btn { background: #e67e22; color: white; padding: 4px 10px; border-radius: 4px; font-size: 14px; margin-right: 10px; font-weight: bold; border: 1px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer;}
         .print-cat-btn:hover { background: #219150; }
+        .export-cat-btn:hover { background: #d35400; }
 
-        /* মোবাইলের জন্য রেস্পন্সিভ স্টাইল (এখানেই মূল পরিবর্তন করা হয়েছে) */
         @media (max-width: 600px) {
             .toolbar { position: static; padding: 10px 15px; gap: 10px; }
             .top-row { flex-direction: column; align-items: stretch; }
@@ -161,12 +121,7 @@
             .input-row { flex-direction: column; align-items: stretch; gap: 8px; }
             .input-group { flex: unset; }
             #current-status { width: 100%; margin-top: 5px; }
-            
-            /* মোবাইলে কাগজের সাইজ ও গ্যাপ ঠিক করা */
-            .editor { 
-                max-width: 100%; /* মোবাইলে পুরো স্ক্রিন নিবে */
-                padding: 5mm;    /* সাইডের সাদা অংশ কমানো হয়েছে */
-            } 
+            .editor { max-width: 100%; padding: 5mm; } 
             .editor-tools { flex-direction: column; align-items: flex-start; max-width: 100%;}
             .print-settings { border-left: none; padding-left: 0; border-top: 2px solid #ddd; padding-top: 10px; width: 100%; justify-content: space-between;}
         }
@@ -182,7 +137,6 @@
             .print-page { display: flex; justify-content: space-between; width: 100%; break-after: page; page-break-after: always; }
             .page-half { width: 47%; padding: 5mm; font-family: 'Tiro Bangla', serif; font-size: var(--doc-font-size); line-height: var(--doc-line-height); }
             
-            /* সম্পূর্ণ পৃষ্ঠায় প্রিন্টের জন্য নির্দিষ্ট পেজ লেআউট (২ কলাম) */
             .print-page.full-page-layout { justify-content: center; }
             .print-page.full-page-layout .print-left { width: 100%; max-width: 100%; margin: 0 auto; column-count: 2; column-gap: 15mm; }
             .print-page.full-page-layout .print-right { display: none; }
@@ -221,7 +175,6 @@
     </div>
 
     <div class="editor-wrapper no-print">
-        
         <div class="editor-tools">
             <div class="text-format-bar">
                 <button class="format-btn" onmousedown="event.preventDefault(); formatText('bold')" title="মোটা করুন"><b>B</b></button>
@@ -235,9 +188,7 @@
                     <button class="format-btn" onmousedown="event.preventDefault(); changeLineHeight(-0.1)" title="গ্যাপ কমান">গ্যাপ -</button>
                 </div>
 
-                <!-- গণিতের বাটন সমূহ -->
                 <div class="text-format-bar" style="border-left: 2px solid #ddd; padding-left: 10px; margin-left: 5px;">
-                    <!-- নতুন ছক বাটন -->
                     <button class="format-btn" style="background:#dff9fb;" onmousedown="event.preventDefault(); insertMathGrid(2)" title="২টি অংক পাশাপাশি লেখার ছক"><b>২</b> কলাম</button>
                     <button class="format-btn" style="background:#dff9fb;" onmousedown="event.preventDefault(); insertMathGrid(3)" title="৩টি অংক পাশাপাশি লেখার ছক"><b>৩</b> কলাম</button>
                     
@@ -246,9 +197,7 @@
                     <button class="format-btn" onmousedown="event.preventDefault(); insertMath('mul')" title="নিচে নিচে গুণ"><b>×</b> গুণ</button>
                     <button class="format-btn" onmousedown="event.preventDefault(); insertMath('div')" title="ভাগ"><b>÷</b> ভাগ</button>
                     
-                    <!-- বহু-সারির অংক বাটন -->
                     <button class="format-btn" style="background:#ffeaa7;" onmousedown="event.preventDefault(); insertMultiRowMath()" title="৩, ৪ বা তার বেশি সারির অংক"><b>➕</b> বড় অংক</button>
-                    
                     <button class="format-btn" onmousedown="event.preventDefault(); insertMath('frac')" title="ভগ্নাংশ"><b>½</b> ভগ্নাংশ</button>
                 </div>
             </div>
@@ -266,11 +215,22 @@
         <div class="editor" id="document-editor" contenteditable="true"></div>
     </div>
 
+    <!-- আপডেট করা ডাটাবেস পপ-আপ -->
     <div id="databaseModal" class="modal no-print">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>ক্যাটাগরি সমূহ (সেভ করা প্রশ্ন)</h3>
-                <span class="close-btn" onclick="closeDatabase()">&times;</span>
+                
+                <!-- ইমপোর্ট এবং এক্সপোর্ট বাটন -->
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <button class="btn btn-save" onclick="document.getElementById('import-file').click()" style="padding: 5px 10px; font-size: 13px;" title="অন্য ফাইল থেকে প্রশ্ন আনুন">📥 ইমপোর্ট</button>
+                    <button class="btn btn-db" onclick="exportAllData()" style="padding: 5px 10px; font-size: 13px; background:#e67e22;" title="সব প্রশ্ন একসাথে সেভ করে রাখুন">📤 সব এক্সপোর্ট</button>
+                    
+                    <!-- হিডেন ইনপুট ফিল্ড ফাইল ইমপোর্ট করার জন্য -->
+                    <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importData(event)">
+                    
+                    <span class="close-btn" onclick="closeDatabase()">&times;</span>
+                </div>
             </div>
             <div class="modal-body" id="saved-list"></div>
         </div>
@@ -356,7 +316,6 @@
                     <p>(ক) সাব-প্রশ্ন থাকলে এখানে লিখুন</p>
                 </div>
             `;
-            
             editor.insertAdjacentHTML('beforeend', newQuestionHTML);
         }
 
@@ -365,90 +324,50 @@
             document.getElementById('document-editor').focus();
         }
 
-        // পাশাপাশি অংক লেখার জন্য অদৃশ্য টেবিল ইনসার্ট ফাংশন (গ্যাপ কমানো হয়েছে)
         function insertMathGrid(columns) {
             const letters = ['(ক)', '(খ)', '(গ)', '(ঘ)'];
             const width = 100 / columns;
             let html = `<table class="math-grid-table"><tbody><tr>`;
-            
             for(let i = 0; i < columns; i++) {
                 html += `<td style="width: ${width}%;">${letters[i]}&nbsp;</td>`;
             }
-            
-            html += `</tr></tbody></table><p style="margin:0;">&nbsp;</p>`; // অতিরিক্ত গ্যাপ রিমুভ করা হয়েছে
-            
+            html += `</tr></tbody></table><p style="margin:0;">&nbsp;</p>`;
             document.getElementById('document-editor').focus();
             document.execCommand('insertHTML', false, html);
         }
 
-        // ৩, ৪ বা তার বেশি সারির অংক তৈরি করার ফাংশন
         function insertMultiRowMath() {
             let rows = prompt("কত সারির অংক তৈরি করতে চান? (যেমন: 3, 4, 5)", "3");
             rows = parseInt(rows);
-            
             if (isNaN(rows) || rows < 2) return; 
 
             let html = `<div class="math-vertical" contenteditable="false">`;
-            
             for(let i = 0; i < rows - 1; i++) {
                 html += `<div contenteditable="true" class="math-row">১২৩</div>`;
             }
-            
             html += `
                 <div class="math-row math-line">
                     <span class="math-sign" contenteditable="true">+</span>
                     <span contenteditable="true">৪৫৬</span>
                 </div>
             </div>&nbsp;`;
-
             document.getElementById('document-editor').focus();
             document.execCommand('insertHTML', false, html);
         }
 
         function insertMath(type) {
             let html = "";
-            
             if(type === 'add') {
-                html = `
-                <div class="math-vertical" contenteditable="false">
-                    <div contenteditable="true" class="math-row">৪৫৬</div>
-                    <div class="math-row math-line">
-                        <span class="math-sign" contenteditable="true">+</span>
-                        <span contenteditable="true">১২৩</span>
-                    </div>
-                </div>&nbsp;`;
-            } 
-            else if(type === 'sub') {
-                html = `
-                <div class="math-vertical" contenteditable="false">
-                    <div contenteditable="true" class="math-row">৮৯০</div>
-                    <div class="math-row math-line">
-                        <span class="math-sign" contenteditable="true">-</span>
-                        <span contenteditable="true">৩৪৫</span>
-                    </div>
-                </div>&nbsp;`;
-            }
-            else if(type === 'mul') {
-                html = `
-                <div class="math-vertical" contenteditable="false">
-                    <div contenteditable="true" class="math-row">৭২৫</div>
-                    <div class="math-row math-line">
-                        <span class="math-sign" contenteditable="true">×</span>
-                        <span contenteditable="true">৪৬</span>
-                    </div>
-                </div>&nbsp;`;
-            }
-            else if(type === 'div') {
+                html = `<div class="math-vertical" contenteditable="false"><div contenteditable="true" class="math-row">৪৫৬</div><div class="math-row math-line"><span class="math-sign" contenteditable="true">+</span><span contenteditable="true">১২৩</span></div></div>&nbsp;`;
+            } else if(type === 'sub') {
+                html = `<div class="math-vertical" contenteditable="false"><div contenteditable="true" class="math-row">৮৯০</div><div class="math-row math-line"><span class="math-sign" contenteditable="true">-</span><span contenteditable="true">৩৪৫</span></div></div>&nbsp;`;
+            } else if(type === 'mul') {
+                html = `<div class="math-vertical" contenteditable="false"><div contenteditable="true" class="math-row">৭২৫</div><div class="math-row math-line"><span class="math-sign" contenteditable="true">×</span><span contenteditable="true">৪৬</span></div></div>&nbsp;`;
+            } else if(type === 'div') {
                 html = `<span class="math-inline"> ১২ ) ১৪৪ ( </span>&nbsp;`;
+            } else if(type === 'frac') {
+                html = `&nbsp;<span class="fraction" contenteditable="false"><span class="frac-top" contenteditable="true">১</span><span class="frac-bottom" contenteditable="true">২</span></span>&nbsp;`;
             }
-            else if(type === 'frac') {
-                html = `
-                &nbsp;<span class="fraction" contenteditable="false">
-                    <span class="frac-top" contenteditable="true">১</span>
-                    <span class="frac-bottom" contenteditable="true">২</span>
-                </span>&nbsp;`;
-            }
-
             document.getElementById('document-editor').focus();
             document.execCommand('insertHTML', false, html);
         }
@@ -506,6 +425,94 @@
             document.getElementById('databaseModal').style.display = 'none';
         }
 
+        // --- এক্সপোর্ট ফাংশনসমূহ --- //
+
+        // ডাটা ফাইলে রূপান্তর করার মূল ফাংশন
+        function downloadJSON(dataArray, filename) {
+            if (!dataArray || dataArray.length === 0) {
+                alert("এক্সপোর্ট করার মতো কোনো ডেটা নেই!");
+                return;
+            }
+            const blob = new Blob([JSON.stringify(dataArray, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // সব প্রশ্ন একসাথে এক্সপোর্ট
+        function exportAllData() {
+            let papers = JSON.parse(localStorage.getItem('madrasa_papers')) || [];
+            let date = new Date().toISOString().slice(0, 10);
+            downloadJSON(papers, `All_Questions_Backup_${date}.json`);
+        }
+
+        // নির্দিষ্ট ক্লাসের/ক্যাটাগরির সব প্রশ্ন এক্সপোর্ট
+        function exportCategoryData(className, event) {
+            event.stopPropagation();
+            let papers = JSON.parse(localStorage.getItem('madrasa_papers')) || [];
+            let categoryData = papers.filter(p => p.className === className);
+            downloadJSON(categoryData, `Class_${className}_Questions.json`);
+        }
+
+        // নির্দিষ্ট একটি প্রশ্ন এক্সপোর্ট
+        function exportSinglePaper(id) {
+            let papers = JSON.parse(localStorage.getItem('madrasa_papers')) || [];
+            let paper = papers.find(p => p.id === id);
+            if (paper) {
+                downloadJSON([paper], `${paper.className}_${paper.subject}.json`);
+            }
+        }
+
+        // --- ইমপোর্ট ফাংশন --- //
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    
+                    if (!Array.isArray(importedData)) {
+                        alert("ভুল ফাইল ফরম্যাট! দয়া করে সঠিক JSON ফাইল নির্বাচন করুন।");
+                        return;
+                    }
+
+                    let existingData = JSON.parse(localStorage.getItem('madrasa_papers')) || [];
+                    
+                    // ব্যবহারকারীকে জিজ্ঞাসা করা যে আগের প্রশ্নের সাথে যুক্ত করবে নাকি মুছে ফেলবে
+                    let mergeMode = confirm("আপনি কি বর্তমান প্রশ্নগুলোর সাথে নতুন প্রশ্নগুলো যুক্ত করতে চান?\n\n'OK' চাপলে যুক্ত হবে (Merge)।\n'Cancel' চাপলে বর্তমানগুলো মুছে গিয়ে শুধু নতুনগুলো থাকবে (Replace)।");
+
+                    if (!mergeMode) {
+                        existingData = importedData; // আগেরগুলো মুছে ফেলা
+                    } else {
+                        // নতুনগুলোর আইডি পরিবর্তন করে যুক্ত করা যাতে আগের আইডির সাথে মিলে না যায়
+                        importedData.forEach((newPaper, index) => {
+                            newPaper.id = Date.now() + index; 
+                            existingData.push(newPaper);
+                        });
+                    }
+
+                    localStorage.setItem('madrasa_papers', JSON.stringify(existingData));
+                    loadSavedPapers(); 
+                    updateCategoryDatalist(); 
+                    
+                    alert("ডেটা সফলভাবে ইমপোর্ট হয়েছে!");
+                    document.getElementById('import-file').value = ''; 
+
+                } catch (error) {
+                    alert("ফাইলটি পড়া যাচ্ছে না বা এটি সঠিক ডেটা ফাইল নয়।");
+                    console.error(error);
+                }
+            };
+            reader.readAsText(file);
+        }
+
         function loadSavedPapers() {
             let papers = JSON.parse(localStorage.getItem('madrasa_papers')) || [];
             const listContainer = document.getElementById('saved-list');
@@ -529,6 +536,7 @@
                 let html = `<div class="category-btn" onclick="toggleCategory(this)">
                                 <span>📁 ক্যাটাগরি: ${className}</span>
                                 <div>
+                                    <button class="export-cat-btn" onclick="exportCategoryData('${safeClassName}', event)" title="এই ক্লাসের সব প্রশ্ন এক্সপোর্ট করুন">📤 এক্সপোর্ট</button>
                                     <button class="print-cat-btn" onclick="printCategoryPapers('${safeClassName}', event)" title="এই ক্লাসের সব প্রশ্ন একসাথে প্রিন্ট করুন">🖨️ সব প্রিন্ট</button>
                                     <span class="cat-icon">▼</span>
                                 </div>
@@ -541,6 +549,7 @@
                         <div class="saved-item">
                             <div class="item-info">📄 ${paper.subject} - ${examTitle}</div>
                             <div class="action-btns">
+                                <button class="btn-export" onclick="exportSinglePaper(${paper.id})" title="শুধু এই প্রশ্নটি ফাইলে সেভ করুন">⬇️ এক্সপোর্ট</button>
                                 <button class="btn-edit" onclick="editPaper(${paper.id})">✏️ এডিট</button>
                                 <button class="btn-delete" onclick="deletePaper(${paper.id})">🗑️ ডিলিট</button>
                             </div>
